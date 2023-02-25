@@ -8,12 +8,60 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var introduceLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    var randomNum = Int.random(in: 1...10)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        introduceLabel.text = "선택하세요"
+        numberLabel.text = ""
+        
     }
-
-    // test code
+    
+    
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let numString = sender.currentTitle!
+        numberLabel.text = numString
+        
+    }
+    
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        introduceLabel.text = "다시 선택하세요"
+        numberLabel.text = ""
+        randomNum = Int.random(in: 1...10)
+    }
+    
+    
+    @IBAction func selectButtonTapped(_ sender: UIButton) {
+        
+        guard let numString = numberLabel.text else{
+            introduceLabel.text = "X"
+            return
+        }
+        
+        guard let mySelectedNum = Int(numString) else{
+            introduceLabel.text = "X"
+            return
+        }
+        
+        if randomNum > mySelectedNum{
+            introduceLabel.text = "UP"
+        }else if randomNum < mySelectedNum{
+            introduceLabel.text = "DOWN"
+        }else{
+            introduceLabel.text = "BINGO👍"
+        }
+        
+        
+    }
+    
+    
+    
 }
 
