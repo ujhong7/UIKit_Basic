@@ -13,7 +13,7 @@ final class ViewController: UIViewController {
     // MARK: - 이메일 입력 텍스트뷰
     private lazy var emailTextFieldView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
         view.addSubview(emailTextField)
@@ -26,7 +26,7 @@ final class ViewController: UIViewController {
         let label = UILabel()
         label.text = "이메일 또는 전화번호"
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = UIColor.lightGray
+        label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         return label
     }()
     
@@ -41,7 +41,7 @@ final class ViewController: UIViewController {
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
-//        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         return tf
     }()
     
@@ -64,7 +64,7 @@ final class ViewController: UIViewController {
         let label = UILabel()
         label.text = "비밀번호"
         label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = UIColor.lightGray
+        label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         return label
     }()
     
@@ -81,7 +81,7 @@ final class ViewController: UIViewController {
         tf.spellCheckingType = .no
         tf.isSecureTextEntry = true
         tf.clearsOnBeginEditing = false
-//        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         return tf
     }()
     
@@ -116,7 +116,7 @@ final class ViewController: UIViewController {
         
     // 이메일텍스트필드, 패스워드, 로그인버튼 스택뷰에 배치
     private lazy var stackView: UIStackView = {
-        let stview = UIStackView(arrangedSubviews: [emailTextFieldView,passwordTextField,loginButton])
+        let stview = UIStackView(arrangedSubviews: [emailTextFieldView,passwordTextFieldView,loginButton])
         stview.spacing = 18
         stview.axis = .vertical
         stview.distribution = .fillEqually
@@ -139,15 +139,20 @@ final class ViewController: UIViewController {
     private let textViewHeight: CGFloat = 48
     
     // 오토레이아웃 향후 변경을 위한 변수(애니메이션)
-    
+    lazy var emailInfoLabelCenterYConstraint =
+        emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
+    lazy var passwordInfoLabelCenterYConstraint =
+        passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-        
+        setupAutoLayout()
     }
     
+    // 셋팅
     private func configureUI(){
         view.backgroundColor = .black
         emailTextField.delegate = self
@@ -157,7 +162,54 @@ final class ViewController: UIViewController {
     
     
     // 오토레이아웃
-    
+    private func setupAutoLayout(){
+       
+        emailInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
+        emailInfoLabel.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
+        //emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor).isActive = true
+        emailInfoLabelCenterYConstraint.isActive = true
+        
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        emailTextField.topAnchor.constraint(equalTo: emailTextFieldView.topAnchor, constant: 15).isActive = true
+        emailTextField.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -2).isActive = true
+        emailTextField.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
+        emailTextField.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8).isActive = true
+        
+        passwordInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        passwordInfoLabel.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
+        passwordInfoLabel.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
+        //passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor).isActive = true
+        passwordInfoLabelCenterYConstraint.isActive = true
+        
+        
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15).isActive = true
+        passwordTextField.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -2).isActive = true
+        passwordTextField.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8).isActive = true
+        passwordTextField.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
+        
+        passwordSecureButton.translatesAutoresizingMaskIntoConstraints = false
+        passwordSecureButton.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15).isActive = true
+        passwordSecureButton.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: -15).isActive = true
+        passwordSecureButton.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: -8).isActive = true
+        
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 36).isActive = true
+        
+        
+        passwordResetButton.translatesAutoresizingMaskIntoConstraints = false
+        passwordResetButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10).isActive = true
+        passwordResetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
+        passwordResetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight).isActive = true
+        
+    }
     
     
     
@@ -201,15 +253,78 @@ final class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate{
     // MARK: - 텍스트필드 편집 시작할때의 설정 - 문구가 위로 올라가면서 크기 작아지고, 오토레이아웃 업데이트
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        // dd
+        if textField == emailTextField{ // 유저가 선택한 텍스트필드가 emailTextField라면..
+            emailTextFieldView.backgroundColor = #colorLiteral(red: 0.2972877622, green: 0.2973434925, blue: 0.297280401, alpha: 1)
+            emailInfoLabel.font = .systemFont(ofSize: 11)
+            // 오토레이아웃 업데이트
+            emailInfoLabelCenterYConstraint.constant = -13
+        }
+        
+        if textField == passwordTextField{
+            passwordTextField.backgroundColor = #colorLiteral(red: 0.2972877622, green: 0.2973434925, blue: 0.297280401, alpha: 1)
+            passwordInfoLabel.font = .systemFont(ofSize: 11)
+            // 오토레이아웃 업데이트
+            passwordInfoLabelCenterYConstraint.constant = -13
+        }
+        
+        // 실제 레이아웃 변경은 애니메이션으로
+        UIView.animate(withDuration: 0.3){
+            self.stackView.layoutIfNeeded()
+        }
+        
     }
     
-    // dddd
+    
+    // 텍스트필드 편집 종료되면 백그라운드 색 변경 (글자가 한개도 입력 안되었을때는 되돌리기)
     func textFieldDidEndEditing(_ textField: UITextField) {
-        // dd
+        if textField == emailTextField{
+            emailTextFieldView.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+            // 빈칸이면(아무것도 안적혀있다면) 원래대로 되돌리기
+            if emailTextField.text == "" {
+                emailInfoLabel.font = .systemFont(ofSize: 18)
+                emailInfoLabelCenterYConstraint.constant = 0
+            }
+        }
+        
+        if textField == passwordTextField{
+            passwordTextField.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+            // 빈칸이면(아무것도 안적혀있다면) 원래대로 되돌리기
+            if passwordTextField.text == ""{
+                passwordInfoLabel.font = .systemFont(ofSize: 18)
+                passwordInfoLabelCenterYConstraint.constant = 0
+            }
+        }
+        
+        // 실제 레이아웃 변경은 애니메이션으로
+        UIView.animate(withDuration: 0.3){
+            self.stackView.layoutIfNeeded()
+        }
     }
     
+    // MARK: - 이메일,비밀번호 텍스트필드 두가지 다 채워져 있을때, 로그인 버튼 빨간색으로 변경
+    @objc private func textFieldEditingChanged(_ textField: UITextField){
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty
+        else {
+            loginButton.backgroundColor = .clear
+            loginButton.isEnabled = false
+            return
+        }
+        loginButton.backgroundColor = .red
+        loginButton.isEnabled = true
+    }
     
-    
+    // 엔터 누르면 키보드 내림
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
