@@ -59,6 +59,9 @@
                                         <state key="normal" title="StoryBoard with Button Segue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="97S-u5-r6v" kind="presentation" identifier="toFourthVC" id="rfp-rf-BCm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -85,19 +88,19 @@
         <!--Third View Controller-->
         <scene sceneID="4JO-pv-Da6">
             <objects>
-                <viewController id="Xhx-Zo-XHp" customClass="ThirdViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Xhx-Zo-XHp" customClass="ThirdViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hiR-2a-PWx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThirdViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cg-WQ-Ebg">
-                                <rect key="frame" x="93" y="364" width="189" height="27"/>
+                                <rect key="frame" x="93" y="392.66666666666669" width="189" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-nO-zdX">
-                                <rect key="frame" x="152.66666666666666" y="675" width="70" height="40"/>
+                                <rect key="frame" x="152.66666666666666" y="698" width="70" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="jIO-3D-oyo"/>
@@ -179,7 +182,7 @@
         <!--Fourth View Controller-->
         <scene sceneID="bgB-vT-x1u">
             <objects>
-                <viewController id="97S-u5-r6v" customClass="FourthViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="97S-u5-r6v" customClass="FourthViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="12Y-jF-rZI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,6 +204,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="97S-u5-r6v" eventType="touchUpInside" id="BH6-D1-WFD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dk7-cW-Aca"/>
@@ -212,6 +218,9 @@
                             <constraint firstItem="dk7-cW-Aca" firstAttribute="bottom" secondItem="n9M-Fm-qQC" secondAttribute="bottom" constant="40" id="YOI-av-EVC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="tx6-nV-eNn" id="3YB-Hc-hDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbB-Xh-9yL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
