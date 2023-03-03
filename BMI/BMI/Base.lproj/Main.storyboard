@@ -81,6 +81,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="BMI 계산하기"/>
                                 <connections>
                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bSv-4w-RvO"/>
+                                    <segue destination="RH4-N6-HeP" kind="presentation" identifier="toSecondVC" id="yuU-ef-KQd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,7 +112,7 @@
             <objects>
                 <viewController id="RH4-N6-HeP" customClass="SecondViewController" customModule="BMI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wGe-Rr-E9y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Jl7-2o-Rn9">
@@ -144,7 +145,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRm-8s-Jt5">
-                                <rect key="frame" x="20" y="703" width="335" height="45"/>
+                                <rect key="frame" x="20" y="680" width="335" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ir0-ng-1Cu"/>
