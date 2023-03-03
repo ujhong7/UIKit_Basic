@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         bmi = calculateBMI(height: heightTextField.text!, weight: weightTextField.text!)
     }
     
-    // 조건에 따라 다음화면 이동할지 말지
+    // ⭐️ 조건에 따라 다음화면 이동할지 말지
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if heightTextField.text == "" || weightTextField.text == ""{
             mainLabel.text = "키와 몸무게를 입력하세요!"
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         return true
     }
     
-    // 다음화면 넘어가기 전에 준비 (일반적으로 데이터 전달)
+    // ⭐️ 다음화면 넘어가기 전에 준비 (일반적으로 데이터 전달)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "toSecondVC"{
             let secondVC = segue.destination as! SecondViewController
