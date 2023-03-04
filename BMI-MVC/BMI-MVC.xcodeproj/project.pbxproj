@@ -14,6 +14,8 @@
 		1DEF2F2B29B1E14200FC5008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DEF2F2A29B1E14200FC5008 /* Assets.xcassets */; };
 		1DEF2F2E29B1E14200FC5008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DEF2F2C29B1E14200FC5008 /* LaunchScreen.storyboard */; };
 		1DEF2F3629B1E18C00FC5008 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEF2F3529B1E18C00FC5008 /* SecondViewController.swift */; };
+		1DEF2F3B29B1E3F600FC5008 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEF2F3A29B1E3F600FC5008 /* BMI.swift */; };
+		1DEF2F3D29B1E40B00FC5008 /* BMICalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEF2F3C29B1E40B00FC5008 /* BMICalculatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1DEF2F2D29B1E14200FC5008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DEF2F2F29B1E14200FC5008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DEF2F3529B1E18C00FC5008 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1DEF2F3A29B1E3F600FC5008 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
+		1DEF2F3C29B1E40B00FC5008 /* BMICalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		1DEF2F3729B1E1B800FC5008 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DEF2F3A29B1E3F600FC5008 /* BMI.swift */,
+				1DEF2F3C29B1E40B00FC5008 /* BMICalculatorManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEF2F3B29B1E3F600FC5008 /* BMI.swift in Sources */,
 				1DEF2F3629B1E18C00FC5008 /* SecondViewController.swift in Sources */,
+				1DEF2F3D29B1E40B00FC5008 /* BMICalculatorManager.swift in Sources */,
 				1DEF2F2629B1E13F00FC5008 /* ViewController.swift in Sources */,
 				1DEF2F2229B1E13F00FC5008 /* AppDelegate.swift in Sources */,
 				1DEF2F2429B1E13F00FC5008 /* SceneDelegate.swift in Sources */,

@@ -11,22 +11,19 @@ class SecondViewController: UIViewController{
     
     @IBOutlet weak var bmiNumberLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
-    @IBOutlet weak var backButton: UIButton! // 버튼 둥글게하기 위해
+    @IBOutlet weak var backButton: UIButton!
     
-    // 전 화면에서 전달받은 데이터
-    var bmiNumber: Double?
-    var adviceString: String?
-    var bmiColor: UIColor?
+    var bmi: BMI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bmiNumberLabel.text = "\(bmiNumber!)"
-        bmiNumberLabel.backgroundColor = bmiColor
-        adviceLabel.text = adviceString
+       // 전화면에서 전달받은 BMI를 통해 셋팅
+        bmiNumberLabel.text  = "(\(bmi!.bmiNumber)"
+        bmiNumberLabel.backgroundColor = bmi?.bmiColor
+        adviceLabel.text = bmi?.adviceString
         
         configureUI()
-        
     }
     
     func configureUI(){
