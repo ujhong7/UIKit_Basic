@@ -35,7 +35,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="swx-fI-qlI" kind="presentation" id="Q2p-vp-kX9"/>
+                                    <segue destination="swx-fI-qlI" kind="presentation" modalPresentationStyle="fullScreen" id="Q2p-vp-kX9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,17 +58,17 @@
             <objects>
                 <viewController id="swx-fI-qlI" customClass="SecondViewController" customModule="VC_Cycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4h-52-ZdB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC-2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQH-g9-Ga4">
-                                <rect key="frame" x="162" y="364" width="51" height="27"/>
+                                <rect key="frame" x="162" y="392.66666666666669" width="51" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGd-eF-QCS">
-                                <rect key="frame" x="120" y="685" width="135" height="40"/>
+                                <rect key="frame" x="120" y="708" width="135" height="40"/>
                                 <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3nc-rk-1xn"/>
@@ -79,6 +79,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="swx-fI-qlI" eventType="touchUpInside" id="CRG-eF-Pnu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mAs-Nu-bTb"/>
