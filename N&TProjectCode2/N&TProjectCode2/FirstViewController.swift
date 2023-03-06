@@ -27,6 +27,8 @@ class FirstViewController: UIViewController {
             let vc = LoginViewController()
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: false)
+            isLoggedIn.toggle() // 로그인여부 상태 바꿔주기!⭐️
+            print(#function)
         }
     }
     
