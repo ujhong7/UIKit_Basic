@@ -83,7 +83,8 @@ extension ViewController: UITableViewDataSource{
     // 2️⃣ 셀의 구성(셀에 표시하고자 하는 데이터 표시)을 뷰컨트롤러에게 물어봄
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MyTableViewCell
-        
+         
+        // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
 //        cell.mainImageView.image = movieArray[indexPath.row].movieImage
 //        cell.movieNameLabel.text = movieArray[indexPath.row].movieName
 //        cell.descriptionLabel.text = movieArray[indePath.row].movieDescription
