@@ -84,10 +84,9 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MyTableViewCell
          
-        // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
-//        cell.mainImageView.image = movieArray[indexPath.row].movieImage
-//        cell.movieNameLabel.text = movieArray[indexPath.row].movieName
-//        cell.descriptionLabel.text = movieArray[indePath.row].movieDescription
+        cell.mainImageView.image = movieArray[indexPath.row].movieImage
+        cell.movieNameLabel.text = movieArray[indexPath.row].movieName
+        cell.descriptionLabel.text = movieArray[indexPath.row].movieDescription
         cell.selectionStyle = .none
         
         return cell

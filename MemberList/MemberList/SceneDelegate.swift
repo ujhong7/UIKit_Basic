@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  TableViewCode
+//  MemberList
 //
-//  Created by yujaehong on 2023/03/07.
+//  Created by yujaehong on 2023/03/10.
 //
 
 import UIKit

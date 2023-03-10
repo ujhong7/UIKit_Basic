@@ -104,12 +104,4 @@ final class DetailView: UIView{
         ])
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
 }
