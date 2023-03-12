@@ -73,7 +73,33 @@ class MyTableViewCell: UITableViewCell {
         
     }
     
-    // ⭐️
+    func setConstraints(){
+        NSLayoutConstraint.activate([
+            mainImageView.heightAnchor.constraint(equalToConstant: 40),
+            mainImageView.widthAnchor.constraint(equalToConstant: 40),
+        
+            // self.leadingAnchor로 잡는 것보다 self.contentView.leadingAnchor로 잡는 것이 더 정확하다 ⭐️
+            // cell은 기본뷰로 contentView를 가지고 있기 때문
+            mainImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+            mainImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            memberNameLabel.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: mainImageView.trailingAnchor, constant: 20),
+            
+            // self.trailingAnchor로 잡는 것보다 self.contentView.trailingAnchor로 잡는 것이 더 정확하다 ⭐️
+            // cell은 기본뷰로 contentView를 가지고 있기 때문
+            stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: self.mainImageView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.mainImageView.bottomAnchor)
+        ])
+        
+        
+    }
     
     
     

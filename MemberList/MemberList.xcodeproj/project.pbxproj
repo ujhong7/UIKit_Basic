@@ -67,6 +67,7 @@
 				1DAD875129BACAFF003F47C4 /* Models */,
 				1DAD875029BACAF8003F47C4 /* Views */,
 				1DAD874F29BACAED003F47C4 /* Controllers */,
+				1DAD874129BAC7C8003F47C4 /* Main.storyboard */,
 				1DAD874429BAC7CA003F47C4 /* Assets.xcassets */,
 				1DAD874629BAC7CA003F47C4 /* LaunchScreen.storyboard */,
 				1DAD874929BAC7CA003F47C4 /* Info.plist */,
@@ -85,7 +86,6 @@
 		1DAD875029BACAF8003F47C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1DAD874129BAC7C8003F47C4 /* Main.storyboard */,
 				1DAD875629BB1F57003F47C4 /* MyTableViewCell.swift */,
 			);
 			path = Views;
