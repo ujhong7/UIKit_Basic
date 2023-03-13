@@ -9,6 +9,17 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
 
+    // MARK: - 멤버 저장속성 구현
+    // 멤버가 변할때마다 자동으로 업데이트 되도록 구현 didSet(속성 감시자)⭐️
+    var member: Member?{
+        didSet{
+            guard var member = member else { return }
+            mainImageView.image = member.memberImage
+            memberNameLabel.text = member.name
+            addressLabel.text = member.address
+        }
+    }
+    
     // MARK: - UI구현
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
@@ -66,11 +77,14 @@ class MyTableViewCell: UITableViewCell {
     
     // MARK: - 오토레이아웃 셋팅
     override func updateConstraints() {
-        
+        setConstraints()
+        super.updateConstraints()
     }
     
     override func layoutSubviews() {
-        
+        super.layoutSubviews()
+        self.mainImageView.clipsToBounds = true
+        self.mainImageView.layer.cornerRadius = self.mainImageView.frame.width / 2
     }
     
     func setConstraints(){
@@ -97,8 +111,6 @@ class MyTableViewCell: UITableViewCell {
             stackView.topAnchor.constraint(equalTo: self.mainImageView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.mainImageView.bottomAnchor)
         ])
-        
-        
     }
     
     

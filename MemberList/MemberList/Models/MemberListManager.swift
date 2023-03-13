@@ -44,5 +44,8 @@ final class MemberListManger {
         get{
             return memberList[index]
         }
+//        set{
+//            memberList[index] = newValue
+//        }
     }
 }
