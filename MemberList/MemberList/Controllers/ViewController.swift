@@ -56,7 +56,7 @@ final class ViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         // 네비게이션바 오른쪽 상단 버튼 설정
-//        self.navigationItem.rightBarButtonItem = self.plusButton
+        self.navigationItem.rightBarButtonItem = self.plusButton
         
     }
     
@@ -96,8 +96,10 @@ final class ViewController: UIViewController {
     
     @objc func plusButtonTapped(){
         // 다음화면으로 이동 (멤버는 전달하지 않음)
+        let detailVC = DetailViewController()
         
         // 화면이동
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     
@@ -139,15 +141,37 @@ extension ViewController: UITableViewDelegate {
         let detailVC = DetailViewController()
         
         // 다음 화면의 대리자 설정 (다음 화면의 대리자는 지금 현재의 뷰컨트롤러)
-        // detailVC.delegate = self
+         detailVC.delegate = self
         
         // 다음 화면에 멤버를 전달
         let currentMember = memberListManager.getMemberList()[indexPath.row]
         detailVC.member = currentMember
+        
         
         // 화면이동
         navigationController?.pushViewController(detailVC, animated: true)
         //show(detailVC, sender: nil)
     }
 
+}
+
+// MARK: - 멤버 추가하거나, 업데이트에 대한 델리게이트 구현
+
+extension ViewController: MemberDelegate {
+    // 멤버가 추가되면 실행할 메서드 구현
+    func addNewMember(_ member: Member) {
+        // 모델에 멤버 추가
+        memberListManager.makeNewMember(member)
+        // 테이블뷰를 다시 로드 (다시 그리기)
+        tableView.reloadData()
+    }
+    
+    // 멤버의 정보가 업데이트 되면 실행할 메서드 구현
+    func update(index: Int, _ member: Member) {
+        print("업데이트")
+        // 모델에 멤버 정보 업데이트
+        memberListManager.updateMemberInfo(index: index, member)
+        // 테이블뷰를 다시 로드 (다시 그리기)
+        tableView.reloadData()
+    }
 }
