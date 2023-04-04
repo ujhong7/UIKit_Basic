@@ -109,7 +109,10 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = musicTableView.dequeueReusableCell(withIdentifier: Cell.musicCellIdentifier, for: indexPath) as! MusicCell
         
-        // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+        // ⭐️ 네트워크 통신 직접 x (테이블뷰 빠르게 스크롤 할 때 문제발생) ⭐️
+        // (비동기적 작업으로 전달하면 안된다)
+        // url만 받아서 전달 (빠르게 동작)
+        // 셀에서 직접적으로 이미지 load 작업 (MusicCell)
         cell.imageUrl = musicArrays[indexPath.row].imageUrl
         
         cell.songNameLabel.text = musicArrays[indexPath.row].songName
