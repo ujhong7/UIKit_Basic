@@ -17,7 +17,7 @@ class MusicCollectionViewCell: UICollectionViewCell {
     
     
     // 이미지 URL을 전달받는 속성
-    var imageURL: String? {
+    var imageUrl: String? {
         didSet {
             loadImage()
         }

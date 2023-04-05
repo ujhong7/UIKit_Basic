@@ -50,7 +50,7 @@ class SearchResultViewController: UIViewController {
         
         
         collectionView.dataSource = self
-        view.backgroundColor = .white
+        collectionView.backgroundColor = .white
         
         // 컬렉션뷰의 스크롤 방향설정
         flowLayout.scrollDirection = .vertical
@@ -116,8 +116,7 @@ extension SearchResultViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.musicCollectionViewCellIdentifier, for: indexPath) as! MusicCollectionViewCell
-        
-        cell.imageUrl = musicArrays[indexPath.item].imageUrl
+        cell.imageUrl = musicArrays[indexPath.item]?.imageUrl
         
         return cell
     }
