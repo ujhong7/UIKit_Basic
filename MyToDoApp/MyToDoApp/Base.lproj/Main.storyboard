@@ -105,21 +105,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PiO-1W-Eim"/>
+                    <connections>
+                        <outlet property="tableView" destination="frJ-hF-hYd" id="ost-ch-o5v"/>
+                        <segue destination="6Bb-iR-XWE" kind="show" identifier="ToDoCell" id="FBg-uW-GIS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.1538461538462" y="-2.1327014218009479"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="D8r-CE-dSR">
             <objects>
-                <viewController id="6Bb-iR-XWE" sceneMemberID="viewController">
+                <viewController id="6Bb-iR-XWE" customClass="DetailViewController" customModule="MyToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bRc-1k-qKm">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-bX-GsW">
-                                <rect key="frame" x="25" y="67" width="340" height="35"/>
+                                <rect key="frame" x="25" y="163" width="340" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-Ns-mJq">
                                         <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="35"/>
@@ -151,7 +155,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OP-Tn-IAe">
-                                <rect key="frame" x="25" y="142" width="340" height="200"/>
+                                <rect key="frame" x="25" y="238" width="340" height="200"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ps2-Pv-p9t">
                                         <rect key="frame" x="15" y="8" width="310" height="184"/>
@@ -171,7 +175,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrI-5O-5yr">
-                                <rect key="frame" x="25" y="382" width="340" height="40"/>
+                                <rect key="frame" x="25" y="478" width="340" height="40"/>
                                 <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ant-1y-iyG"/>
@@ -199,6 +203,7 @@
                             <constraint firstItem="RrI-5O-5yr" firstAttribute="top" secondItem="1OP-Tn-IAe" secondAttribute="bottom" constant="40" id="wPw-id-7sc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3sG-sy-5a5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhm-Qe-oLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
