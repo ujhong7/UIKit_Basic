@@ -102,6 +102,7 @@
 				1DCFEA3829E3BDE800C47F49 /* ToDoData+CoreDataClass.swift */,
 				1DCFEA3929E3BDE800C47F49 /* ToDoData+CoreDataProperties.swift */,
 				1DCFEA2D29DF9A3800C47F49 /* CoreDataManger.swift */,
+				1DD8E31329DEB66A008017B1 /* ViewController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,7 +118,6 @@
 		1DD8E32629DEBA15008017B1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1DD8E31329DEB66A008017B1 /* ViewController.swift */,
 				1DCFEA2B29DF99AD00C47F49 /* DetailViewController.swift */,
 			);
 			path = Controllers;
