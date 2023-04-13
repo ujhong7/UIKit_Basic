@@ -1,15 +1,14 @@
 //
 //  DetailViewController.swift
-//  MyToDoApp
+//  MyToDoApp2
 //
-//  Created by yujaehong on 2023/04/07.
+//  Created by yujaehong on 2023/04/13.
 //
 
 import UIKit
 
 class DetailViewController: UIViewController {
 
-    
     
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
@@ -21,8 +20,10 @@ class DetailViewController: UIViewController {
         return [redButton, greenButton, blueButton, purpleButton]
     }()
     
-    @IBOutlet weak var backgroundView: UIView!
+
     @IBOutlet weak var mainTextView: UITextView!
+    @IBOutlet weak var backgroundView: UIView!
+    
     
     @IBOutlet weak var saveButton: UIButton!
     
@@ -40,8 +41,10 @@ class DetailViewController: UIViewController {
     // (나중에 어떤 색상이 선택되어 있는지 쉽게 파악하기 위해)
     var temporaryNum: Int64? = 1
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setup()
         configureUI()
     }
@@ -56,7 +59,8 @@ class DetailViewController: UIViewController {
         saveButton.layer.cornerRadius = 8
         clearButtonColors()
     }
-    
+ 
+
     func configureUI() {
         // 기존데이터가 있을때
         if let toDoData = self.toDoData {
@@ -92,6 +96,9 @@ class DetailViewController: UIViewController {
         }
     }
     
+    
+
+    
     @IBAction func colorButtonTapped(_ sender: UIButton) {
         // 임시숫자 저장
         self.temporaryNum = Int64(sender.tag)
@@ -102,6 +109,7 @@ class DetailViewController: UIViewController {
         clearButtonColors()
         setupColorButton(num: Int64(sender.tag))
     }
+    
     
     // 텍스트뷰/저장(업데이트)버튼 색상 설정
     func setupColorTheme(color: MyColor? = .red) {
@@ -142,6 +150,8 @@ class DetailViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         // 기존데이터가 있을때 ===> 기존 데이터 업데이트
         if let toDoData = self.toDoData {
@@ -169,6 +179,8 @@ class DetailViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+
+    
 }
 
 extension DetailViewController: UITextViewDelegate {
@@ -190,3 +202,4 @@ extension DetailViewController: UITextViewDelegate {
         }
     }
 }
+

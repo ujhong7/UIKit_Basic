@@ -43,36 +43,36 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nro-SM-dpo">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkS-B3-hbq">
                                                                     <rect key="frame" x="0.0" y="68" width="320" height="30"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-04-06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVf-f7-XTz">
-                                                                            <rect key="frame" x="0.0" y="13" width="82" height="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023-04-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1X-LT-eRf">
+                                                                            <rect key="frame" x="0.0" y="13" width="79.666666666666671" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxi-IC-nMn">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJz-Lp-Wlm">
                                                                             <rect key="frame" x="250" y="4" width="70" height="26"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="70" id="AKp-DZ-Wnf"/>
-                                                                                <constraint firstAttribute="height" constant="26" id="iXN-cd-mbe"/>
+                                                                                <constraint firstAttribute="height" constant="26" id="MjW-Fb-pKw"/>
+                                                                                <constraint firstAttribute="width" constant="70" id="SdP-rs-OKa"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                            <state key="normal" title="UPDATE" image="pencil.tip" catalog="system"/>
-                                                                            <connections>
-                                                                                <action selector="updateButtonTapped:" destination="BGq-DU-cTO" eventType="touchUpInside" id="9y7-lD-hKL"/>
-                                                                            </connections>
+                                                                            <state key="normal" title="UPDATE" image="pencil.tip" catalog="system">
+                                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="rVf-f7-XTz" secondAttribute="bottom" id="0hH-Fl-RFp"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="dxi-IC-nMn" secondAttribute="trailing" id="3Om-VR-5nz"/>
-                                                                        <constraint firstItem="rVf-f7-XTz" firstAttribute="leading" secondItem="Nro-SM-dpo" secondAttribute="leading" id="5Ju-IO-3ji"/>
-                                                                        <constraint firstAttribute="height" constant="30" id="QjI-tp-huO"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="dxi-IC-nMn" secondAttribute="bottom" id="W8C-5c-Rwt"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="g1X-LT-eRf" secondAttribute="bottom" id="8Wr-fR-U5E"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="vJz-Lp-Wlm" secondAttribute="trailing" id="b2l-A9-FDF"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="vJz-Lp-Wlm" secondAttribute="bottom" id="fc2-ee-vDw"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="fun-8a-Gak"/>
+                                                                        <constraint firstItem="g1X-LT-eRf" firstAttribute="leading" secondItem="mkS-B3-hbq" secondAttribute="leading" id="k4k-Kh-qRX"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -96,9 +96,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="backgoundView" destination="poI-bw-ZhN" id="B65-Zd-EyK"/>
-                                            <outlet property="dateTextLabel" destination="rVf-f7-XTz" id="V2F-xs-w5v"/>
+                                            <outlet property="dateTextLabel" destination="g1X-LT-eRf" id="vrD-m9-xlv"/>
                                             <outlet property="toDoTextLabel" destination="XNh-xO-0yX" id="t6W-VG-BDW"/>
-                                            <outlet property="updateButton" destination="dxi-IC-nMn" id="6No-c7-89g"/>
+                                            <outlet property="updateButton" destination="vJz-Lp-Wlm" id="8Jc-E2-kyz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

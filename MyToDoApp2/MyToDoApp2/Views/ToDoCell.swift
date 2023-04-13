@@ -1,13 +1,14 @@
 //
 //  ToDoCell.swift
-//  MyToDoApp
+//  MyToDoApp2
 //
-//  Created by yujaehong on 2023/04/06.
+//  Created by yujaehong on 2023/04/13.
 //
 
 import UIKit
 
-final class ToDoCell: UITableViewCell {
+class ToDoCell: UITableViewCell {
+
     
     
     @IBOutlet weak var backgoundView: UIView!
@@ -27,12 +28,12 @@ final class ToDoCell: UITableViewCell {
     // 뷰컨트롤러에 있는 클로저 저장할 예정 (셀(자신)을 전달)
     var updateButtonPressed: (ToDoCell) -> Void = { (sender) in }
     
-    // 스토리보드의 생성자
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
     }
-    
+
     // 기본 UI
     func configureUI() {
         backgoundView.clipsToBounds = true
@@ -52,17 +53,18 @@ final class ToDoCell: UITableViewCell {
         backgoundView.backgroundColor = color.backgoundColor
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         
-        // Configure the view for the selected state
     }
-    
-    
+
     @IBAction func updateButtonTapped(_ sender: UIButton) {
         // 뷰컨트롤로에서 전달받은 클로저를 실행 (내 자신 ToDoCell을 전달하면서) ⭐️
         updateButtonPressed(self)
     }
+
     
     
 }
