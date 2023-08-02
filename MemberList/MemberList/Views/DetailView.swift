@@ -322,6 +322,7 @@ final class DetailView: UIView {
     // MARK: - 키보드가 나타날때와 내려갈때 에니메이션
     
     @objc func moveUpAction(){
+        print(#function)
         stackViewTopConstraint.constant = -20
         UIView.animate(withDuration: 0.2){
             self.layoutIfNeeded()
@@ -329,6 +330,7 @@ final class DetailView: UIView {
     }
     
     @objc func moveDownAction(){
+        print(#function)
         stackViewTopConstraint.constant = 10
         UIView.animate(withDuration: 0.2){
             self.layoutIfNeeded()
@@ -337,6 +339,7 @@ final class DetailView: UIView {
     
     // 화면 터치 키보드 내리기 (첫번째 responder가 될수 있는것 종료)
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print(#function)
         self.endEditing(true)
     }
     
