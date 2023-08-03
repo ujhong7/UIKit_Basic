@@ -9,7 +9,6 @@ import Foundation
 
 
 // MARK: - 데이터 모델
-
 // 실제 API에서 받게 되는 정보
 struct MusicData: Codable {
     let resultCount: Int
@@ -27,8 +26,6 @@ struct Music: Codable {
     let imageUrl: String?
     private let releaseDate: String?
     
-    
-    
     // 네트워크에서 주는 이름을 변환하는 방법 (원시값)
     // (서버: trackName ===> songName)
     enum CodingKeys: String, CodingKey {
@@ -39,8 +36,6 @@ struct Music: Codable {
         case imageUrl = "artworkUrl100"
         case releaseDate
     }
-    
-    
     
     // (출시 정보에 대한 날짜를 잘 계산하기 위해서) 계산 속성으로
     // "2011-07-05T12:00:00Z" ===> "yyyy-MM-dd"
@@ -54,7 +49,4 @@ struct Music: Codable {
         let dateString = myFormatter.string(from: isoDate)
         return dateString
     }
-
-    
-    
 }
