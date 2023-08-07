@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 //MARK: - 데이터 관리 모델 (전체 관리)
+
 final class MusicManager {
     
     // 저장된 데이터, 서버에서 받아오는 데이터 등, 여러화면의 모든 것을 관리하니 싱글톤으로 만듦

@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Saved List View Controller-->
         <scene sceneID="cC4-zc-VQW">
             <objects>
-                <viewController id="OiZ-PM-aH4" sceneMemberID="viewController">
+                <viewController id="OiZ-PM-aH4" customClass="SavedListViewController" customModule="CoreDataMusicApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IxY-hf-RoT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YyL-d7-Qt7"/>
+                    <connections>
+                        <outlet property="tableView" destination="JVd-wR-QYM" id="Tzp-Ek-pe6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZz-cj-uZd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,6 +97,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uwY-0N-Ty8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5vv-sf-WFV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

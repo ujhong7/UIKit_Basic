@@ -9,6 +9,8 @@ import UIKit
 
 final class SavedListViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     
     // 음악 관리하는 매니저 (싱글톤)
     // 서버 데이터 및 저장된 데이터(코어 데이터) 모두 관리
